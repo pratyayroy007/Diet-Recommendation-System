@@ -1,5 +1,12 @@
 # NutriMatch — AI-Powered Diet & Recipe Recommendation System
 
+[![CI](https://github.com/pratyayroy007/Diet-Recommendation-System/actions/workflows/ci.yml/badge.svg)](https://github.com/pratyayroy007/Diet-Recommendation-System/actions/workflows/ci.yml)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A content-based recipe recommender that matches recipes to a person's nutritional
 targets (calories, fat, protein, etc.) and preferred ingredients, served through a
 FastAPI backend and a Streamlit front end, with recipe photos auto-fetched from the
@@ -16,14 +23,18 @@ the closest-matching recipes — each with cook time, instructions, and an image
 ## Project structure
 
 ```
-AI-Project/
-├── dataset.csv              # gzip-compressed recipe dataset (name, times, ingredients, nutrition, instructions)
-├── model.py                 # core recommendation engine (scaling + kNN pipeline)
-├── main.py                  # FastAPI backend exposing the /predict/ endpoint
-├── recomendation.py         # client-side request generator that calls the backend API
-├── front1.py                # Streamlit landing page / UI entry point
-├── imagefinder.py           # scrapes a representative image for a recipe/search term
-└── docs/                    # literature review + presentation slides
+Diet-Recommendation-System/
+├── code/
+│   ├── model.py                 # Core recommendation engine (scaling + kNN pipeline)
+│   ├── main.py                  # FastAPI backend exposing the /predict/ endpoint
+│   ├── recomendation.py         # Client-side request generator that calls the backend API
+│   ├── front1.py                # Streamlit landing page / UI entry point
+│   └── imagefinder.py           # Scrapes representative recipe image
+├── data/
+│   └── dataset.csv              # Recipe dataset (nutrition, ingredients, instructions)
+├── additional documentation/    # Literature review + presentation decks
+├── requirements.txt             # Project dependencies
+└── README.md
 ```
 
 ## What each file does
